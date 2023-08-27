@@ -1,0 +1,392 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  width: 100%;
+  /* height: 1500px; */
+  direction: rtl;
+}
+header {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../imgs/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navbar-brand:focus,
+.navbar-brand:hover {
+  color: white !important;
+}
+header nav {
+  width: 100%;
+  padding: 10px 0px !important;
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.activeNav {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+header nav .navbar-brand {
+  font-family: "Gulzar", serif;
+  font-size: 40px;
+  color: white;
+  font-weight: 600;
+}
+header nav .navbar-nav li {
+  margin-left: 20px !important;
+  position: relative;
+}
+header nav .navbar-nav li a {
+  color: white !important;
+  font-size: 16px;
+  font-weight: 500;
+}
+header nav .navbar-nav li a.activeItem {
+  border-bottom: 2px solid white;
+}
+
+header nav .navbar-nav li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: all 0.5s ease;
+}
+header nav .navbar-nav li:hover::after {
+  width: 100% !important;
+}
+
+.textHeader {
+  width: 100%;
+  height: 100%;
+}
+.textHeader .container {
+  height: 100%;
+}
+.textHeader .content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.textHeader .content h1 {
+  text-align: right;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 50px;
+  font-weight: 500;
+}
+.textHeader .content button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  background-color: transparent;
+  padding: 10px 15px;
+  width: fit-content;
+  border: 2px solid white;
+  border-radius: 4px;
+  position: relative;
+}
+.textHeader .content button::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.textHeader .content button:hover::before {
+  width: 100%;
+}
+.textHeader .content button:hover a,
+.textHeader .content button:hover i {
+  color: black;
+}
+.textHeader .content button a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  z-index: 10;
+}
+.textHeader .content button:hover i {
+  z-index: 10;
+}
+/*  
+font-family: 'Gulzar', serif;
+font-family: 'Cairo', sans-serif    
+*/
+
+/* =====================start hadith=========== */
+.hadith .row .hadithContent {
+  width: 100%;
+  min-height: 300px;
+  box-shadow: 4px 4px 4px 0 #d1d9e6 inset, -4px -4px 4px 0 #d1d9e6 inset;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.hadith .row .button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hadith .row .button button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+.hadith .row .button span {
+  background-color: white;
+  color: green;
+  padding: 3px;
+  box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.3);
+}
+/* =====================end hadith=========== */
+
+/* =====================start lectures======= */
+.lectures .lecLeft {
+  position: sticky;
+  top: 0;
+}
+.lectures .lecLeft iframe {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 10px;
+}
+.lectures .lecRight .lecBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+}
+.lectures .lecRight .lecBox:hover {
+  transform: scale(0.95);
+}
+.lectures .lecRight .lecBox .img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+/* ================end lectures=========== */
+/* ================start quran============= */
+.quran .quranContent {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.quran .box {
+  box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.quran .box span {
+  color: #232323;
+  font-size: 15px;
+  font-weight: 600;
+}
+.quran .box:hover {
+  transform: scale(1.05);
+}
+
+/* ================end quran============= */
+/* ============surahPopup====== */
+.surahPopup {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 110;
+  overflow-y: scroll;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+}
+.surahPopup.activePop {
+  transform: translateX(0);
+}
+.surahPopup span {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.surahPopup .row {
+  width: 100%;
+}
+.surahPopup .content-Ayat {
+  padding-top: 70px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.surahPopup .content-Ayat p {
+  width: 100%;
+  display: block;
+  min-height: 30px;
+  border-bottom: 2px solid green;
+}
+/* ==============end surahPopup================= */
+/* ================start prayTime=============== */
+.prayTime .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.prayTime .card {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.prayTime .card .circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 7px dashed green;
+  /* border-right: 7px solid transparent; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.prayTime .card .time,
+.prayTime .card .prayName {
+  color: green;
+  font-size: 22px;
+  font-weight: 600;
+}
+/* ================end prayTime=============== */
+/* ===============start footer=============== */
+footer {
+  background-color: #43a047;
+}
+footer .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+footer .content a {
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+}
+footer .content a i {
+}
+/* ===============end footer=============== */
+
+/* ================for All========= */
+section,
+footer {
+  padding: 70px 0px;
+}
+.titleHead {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: green;
+  font-weight: 550;
+  margin-bottom: 30px;
+}
+.titleHead .line1,
+.titleHead .line2 {
+  display: inline-block;
+  height: 3px;
+  background-color: green;
+}
+.titleHead .line1 {
+  width: 90px;
+}
+.titleHead .line2 {
+  width: 50px;
+}
+@media (max-width: 992px) {
+  .navbar-toggler {
+    background-color: #fff !important;
+    border-radius: 0 !important;
+    outline: none !important;
+  }
+  .navbar-toggler i {
+    color: green;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+  nav {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+  header nav .navbar-nav li a {
+    color: rgb(244, 240, 240) !important;
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+/* ================for All========= */
+.scrollButton {
+  background-color: #43a047;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: fixed;
+  bottom: -50px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.scrollButton.active {
+  bottom: 20px;
+}
